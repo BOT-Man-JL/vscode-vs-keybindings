@@ -1,11 +1,11 @@
 {
     "name": "vs-keybindings",
-    "displayName": "Visual Studio Keymap",
-    "description": "Popular Visual Studio keybindings for VS Code.",
-    "version": "0.2.0",
-    "publisher": "ms-vscode",
+    "displayName": "Visual Studio Keymap - BOT Man",
+    "description": "The official vs-keybindings is out-of-date!",
+    "version": "0.2.6",
+    "publisher": "bot-man",
     "engines": {
-        "vscode": "^1.6.0"
+        "vscode": "^1.45.0"
     },
     "categories": [
         "Keymaps"
@@ -15,7 +15,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/Microsoft/vscode-vs-keybindings.git"
+        "url": "https://github.com/BOT-Man-JL/vscode-vs-keybindings.git"
     },
     "bugs": {
         "url": "https://github.com/Microsoft/vscode-vs-keybindings/issues"
@@ -24,14 +24,6 @@
     "icon": "visualstudio-keyboard.png",
     "contributes": {
         "keybindings": [
-            {
-                "key": "ctrl+shift+b",
-                "command": "workbench.action.tasks.build"
-            },
-            {
-                "key": "ctrl+b",
-                "command": "workbench.debug.viewlet.action.addFunctionBreakpointAction"
-            },
             {
                 "key": "ctrl+shift+f9",
                 "command": "workbench.debug.viewlet.action.removeAllBreakpoints"
@@ -65,18 +57,6 @@
                 "when": "editorTextFocus && !editorReadonly"
             },
             {
-                "key": "ctrl+shift+g",
-                "command": "workbench.action.files.openFileFolder"
-            },
-            {
-                "key": "alt+f12",
-                "command": "editor.action.referenceSearch.trigger"
-            },
-            {
-                "key": "ctrl+y",
-                "command": "redo"
-            },
-            {
                 "key": "ctrl+w",
                 "command": "editor.action.smartSelect.expand",
                 "when": "editorTextFocus"
@@ -87,23 +67,38 @@
                 "when": "editorFocus"
             },
             {
-                "key": "ctrl+alt+space",
+                "key": "shift+alt+;",
+                "command": "editor.action.selectHighlights",
+                "when": "editorFocus"
+            },
+            {
+                "key": "ctrl+j",
+                "command": "toggleSuggestionDetails",
+                "when": "suggestWidgetVisible && textInputFocus"
+            },
+            {
+                "key": "ctrl+j",
                 "command": "editor.action.triggerSuggest",
-                "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
+                "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
             },
             {
-                "key": "alt+space",
-                "command": "undo"
+              "key": "ctrl+f12",
+              "command": "editor.action.revealDeclaration",
+              "when": "editorHasDeclarationProvider && editorTextFocus && !isInEmbeddedEditor"
             },
             {
-                "key": "ctrl+delete",
-                "command": "deleteWordEndRight",
-                "when": "editorTextFocus && !editorReadonly"
+              "key": "ctrl+shift+f12",
+              "command": "editor.action.peekDeclaration",
+              "when": "editorHasDeclarationProvider && editorTextFocus && !isInEmbeddedEditor"
             },
             {
-                "key": "ctrl+backspace",
-                "command": "deleteWordStartLeft",
-                "when": "editorTextFocus && !editorReadonly"
+              "key": "ctrl+shift+o",
+              "command": "workbench.action.files.openFolder"
+            },
+            {
+              "key": "ctrl+shift+o",
+              "command": "workbench.action.files.openLocalFolder",
+              "when": "remoteFileDialogVisible"
             },
             {
                 "key": "ctrl+shift+s",
@@ -118,17 +113,13 @@
                 "command": "workbench.view.explorer"
             },
             {
-                "key": "ctrl+r ctrl+r",
-                "command": "editor.action.rename",
-                "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-            },
-            {
-                "key": "ctrl+r ctrl+w",
-                "command": "editor.action.toggleRenderWhitespace"
-            },
-            {
-                "key": "ctrl+k ctrl+m",
+                "key": "ctrl+m ctrl+o",
                 "command": "editor.foldAll",
+                "when": "editorTextFocus"
+            },
+            {
+                "key": "ctrl+m ctrl+l",
+                "command": "editor.unfoldAll",
                 "when": "editorTextFocus"
             },
             {
@@ -141,6 +132,10 @@
             },
             {
                 "key": "ctrl+,",
+                "command": "workbench.action.quickOpen"
+            },
+            {
+                "key": "ctrl+t",
                 "command": "workbench.action.quickOpen"
             },
             {
@@ -174,25 +169,12 @@
                 "when": "editorTextFocus"
             },
             {
-                "key": "shift+alt+enter",
-                "command": "workbench.action.toggleZenMode"
-            },
-            {
                 "key": "ctrl+f4",
                 "command": "workbench.action.closeActiveEditor"
             },
             {
                 "key": "ctrl+d",
-                "command": "editor.action.copyLinesDownAction"
-            },
-            {
-                "key": "ctrl+right",
-                "command": "cursorWordStartRight",
-                "when": "editorTextFocus"
-            },
-            {
-                "key": "ctrl+shift+right",
-                "command": "cursorWordStartRightSelect",
+                "command": "editor.action.duplicateSelection",
                 "when": "editorTextFocus"
             },
             {
@@ -254,11 +236,6 @@
                 "key": "alt+e",
                 "command": "toggleFindRegex",
                 "when": "editorFocus"
-            },
-            {
-                "key": "ctrl+delete",
-                "command": "deleteWordStartRight",
-                "when": "editorTextFocus && !editorReadonly"
             }
         ]
     },
@@ -267,8 +244,5 @@
     },
     "devDependencies": {
         "vscode": "^1.0.0"
-    },
-    "dependencies": {
-        "jsonfile": "^2.2.3"
     }
 }
