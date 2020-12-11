@@ -2,10 +2,10 @@
     "name": "vs-keybindings",
     "displayName": "Visual Studio Keymap - BOT Man",
     "description": "The official vs-keybindings is out-of-date!",
-    "version": "0.2.6",
+    "version": "0.2.7",
     "publisher": "bot-man",
     "engines": {
-        "vscode": "^1.45.0"
+        "vscode": "^1.51.0"
     },
     "categories": [
         "Keymaps"
@@ -82,23 +82,23 @@
                 "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
             },
             {
-              "key": "ctrl+f12",
-              "command": "editor.action.revealDeclaration",
-              "when": "editorHasDeclarationProvider && editorTextFocus && !isInEmbeddedEditor"
+                "key": "ctrl+f12",
+                "command": "editor.action.revealDeclaration",
+                "when": "editorHasDeclarationProvider && editorTextFocus && !isInEmbeddedEditor"
             },
             {
-              "key": "ctrl+shift+f12",
-              "command": "editor.action.peekDeclaration",
-              "when": "editorHasDeclarationProvider && editorTextFocus && !isInEmbeddedEditor"
+                "key": "ctrl+shift+f12",
+                "command": "editor.action.peekDeclaration",
+                "when": "editorHasDeclarationProvider && editorTextFocus && !isInEmbeddedEditor"
             },
             {
-              "key": "ctrl+shift+o",
-              "command": "workbench.action.files.openFolder"
+                "key": "ctrl+shift+o",
+                "command": "workbench.action.files.openFolder"
             },
             {
-              "key": "ctrl+shift+o",
-              "command": "workbench.action.files.openLocalFolder",
-              "when": "remoteFileDialogVisible"
+                "key": "ctrl+shift+o",
+                "command": "workbench.action.files.openLocalFolder",
+                "when": "remoteFileDialogVisible"
             },
             {
                 "key": "ctrl+shift+s",
@@ -219,23 +219,83 @@
             },
             {
                 "key": "alt+r",
-                "command": "editor.action.replaceOne",
-                "when": "editorFocus && findWidgetVisible"
-            },
-            {
-                "key": "alt+r",
                 "command": "search.action.replace",
                 "when": "matchFocus && replaceActive && searchViewletVisible"
             },
             {
-                "key": "alt+e",
-                "command": "toggleSearchRegex",
-                "when": "searchInputBoxFocus && searchViewletVisible"
+                "key": "alt+r",
+                "command": "editor.action.replaceOne",
+                "when": "editorFocus && findWidgetVisible"
+            },
+            {
+                "key": "alt+c",
+                "command": "toggleFindCaseSensitive",
+                "when": "editorFocus"
+            },
+            {
+                "key": "alt+c",
+                "command": "toggleSearchCaseSensitive",
+                "when": "searchViewletFocus && !fileMatchOrFolderMatchFocus"
+            },
+            {
+                "key": "alt+c",
+                "command": "toggleSearchEditorCaseSensitive",
+                "when": "inSearchEditor && searchInputBoxFocus"
+            },
+            {
+                "key": "alt+c",
+                "command": "workbench.action.terminal.toggleFindCaseSensitive",
+                "when": "terminalFindFocused && terminalProcessSupported || terminalFocus && terminalProcessSupported"
             },
             {
                 "key": "alt+e",
                 "command": "toggleFindRegex",
                 "when": "editorFocus"
+            },
+            {
+                "key": "alt+e",
+                "command": "toggleSearchRegex",
+                "when": "searchViewletFocus"
+            },
+            {
+                "key": "alt+e",
+                "command": "toggleSearchEditorRegex",
+                "when": "inSearchEditor && searchInputBoxFocus"
+            },
+            {
+                "key": "alt+e",
+                "command": "workbench.action.terminal.toggleFindRegex",
+                "when": "terminalFindFocused && terminalProcessSupported || terminalFocus && terminalProcessSupported"
+            },
+            {
+                "key": "alt+w",
+                "command": "toggleFindWholeWord",
+                "when": "editorFocus"
+            },
+            {
+                "key": "alt+w",
+                "command": "toggleSearchWholeWord",
+                "when": "searchViewletFocus"
+            },
+            {
+                "key": "alt+w",
+                "command": "toggleSearchEditorWholeWord",
+                "when": "inSearchEditor && searchInputBoxFocus"
+            },
+            {
+                "key": "alt+w",
+                "command": "workbench.action.terminal.toggleFindWholeWord",
+                "when": "terminalFindFocused && terminalProcessSupported || terminalFocus && terminalProcessSupported"
+            },
+            {
+                "key": "alt+p",
+                "command": "togglePreserveCase",
+                "when": "editorFocus"
+            },
+            {
+                "key": "alt+p",
+                "command": "toggleSearchPreserveCase",
+                "when": "searchViewletFocus"
             }
         ]
     },
